@@ -8,8 +8,6 @@ import { PiBuildingApartmentDuotone } from "react-icons/pi";
 import { SlBasket } from "react-icons/sl";
 import Heading from "./heading";
 import { useAuth } from "../contexts/auth";
-const currentUser = useAuth.currentUser;
-
 const Body = ({ searchInput }) => {
   const { userLoggedIn, currentUser } = useAuth();
   const [selectedRecord, setSelectedRecord] = useState(null);
