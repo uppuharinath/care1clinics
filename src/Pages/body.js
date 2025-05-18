@@ -9,6 +9,7 @@ import { SlBasket } from "react-icons/sl";
 import Heading from "./heading";
 import { useAuth } from "../contexts/auth";
 
+
 const Body = ({ searchInput }) => {
   const [selectedRecord, setSelectedRecord] = useState(null);
   const [files, setFiles] = useState([]);
@@ -77,8 +78,7 @@ const Body = ({ searchInput }) => {
     <div className="container main">
       <Heading />
       
-      {/* Upload Section for logged-in users */}
-      {userLoggedIn && (
+   
         <div className="upload-section container b-1px black">
           <h3>Upload Your Business Photos</h3>
           <p>Showcase your business with up to 5 photos</p>
@@ -147,7 +147,7 @@ const Body = ({ searchInput }) => {
             )}
           </div>
         </div>
-      )}
+   
 
       {selectedRecord ? (
         <CardOut record={selectedRecord} onBack={handleBack} />
