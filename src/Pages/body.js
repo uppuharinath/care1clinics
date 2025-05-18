@@ -10,7 +10,6 @@ import Heading from "./heading";
 import { useAuth } from "../contexts/auth";
 
 const Body = ({ searchInput }) => {
-  const { userLoggedIn, setUserLoggedIn } = useAuth();
   const [selectedRecord, setSelectedRecord] = useState(null);
   const [files, setFiles] = useState([]);
   const [isUploading, setIsUploading] = useState(false);
