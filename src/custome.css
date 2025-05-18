@@ -378,9 +378,15 @@ width:fit-content;
     margin-top:1rem;
     list-style-type: none;
     padding:1rem 2rem;
-    font-size:larger;
+    font-size:smaller;
+    background-color: black;
+    padding:1rem 2rem;
   }
 
+  .allcards  btn{
+    background-color: black;
+    padding:1rem 2rem;
+  }
   .allcards  .btn{
     margin:0 auto !important;
     padding:1rem 10%;
@@ -1008,4 +1014,12 @@ background-color: rgba(0, 0, 0, 0.071);
   background: #f8d7da;
   border: 1px solid #f5c6cb;
   border-radius: 4px;
+}
+
+
+.allcards{
+  position:absolute;
+  top:0%;
+  left:0;
+
 }
