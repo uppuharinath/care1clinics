@@ -1,5 +1,4 @@
 import React, { useRef, useState, useEffect, useCallback, useMemo } from "react";
-import Slider from "react-slick";
 import { useSwipeable } from "react-swipeable";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -20,14 +19,7 @@ const allPhotos = useMemo(() => {
     isZoomed: false,
   });
 
-  const imgClick = (photo, index) => {
-    setFullscreenData({
-      img: photo,
-      index,
-      isZoomed: false,
-    });
-    sliderRef.current?.slickPause();
-  };
+
 
   const navigateImage = useCallback(
     (direction) => {
@@ -67,15 +59,7 @@ const allPhotos = useMemo(() => {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [fullscreenData.img, navigateImage, closeFullscreen]);
 
-  const settings = {
-    dots: true,
-    infinite: allPhotos.length > 1,
-    speed: 500,
-    slidesToShow: allPhotos.length > 1 ? 3 : 1,
-    slidesToScroll: 1,
-    autoplay: allPhotos.length > 1,
-    autoplaySpeed: 3000,
-  };
+ 
 
   // Swipe handlers for navigating images
   const swipeHandlers = useSwipeable({

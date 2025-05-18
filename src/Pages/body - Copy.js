@@ -95,14 +95,7 @@ const Body = ({ searchInput }) => {
     return otherMatch || idMatch;
   });
 
-  const iconMap = {
-    FaHotel: <FaHotel />,
-    TbAirConditioning: <TbAirConditioning />,
-    PiBuildingApartmentDuotone: <PiBuildingApartmentDuotone />,
-    GiAutoRepair: <GiAutoRepair />,
-    SlBasket: <SlBasket />,
-    GiNoodles: <GiNoodles />,
-  };
+
 
   return (
     <div className="container main">
