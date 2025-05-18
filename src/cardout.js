@@ -9,7 +9,10 @@ const CardOut = ({ record, onBack }) => {
   const fullscreenRef = useRef(null);
 
   // Memoizing the allPhotos array to avoid unnecessary re-renders
-  const allPhotos = useMemo(() => [record.bannerimage, ...record.photos.filter((photo) => photo !== record.bannerimage)], [record.bannerimage, record.photos]);
+const allPhotos = useMemo(() => {
+  return Array.isArray(record.photos) ? record.photos : [];
+}, [record.photos]);
+
 
   const [fullscreenData, setFullscreenData] = useState({
     img: null,
@@ -85,7 +88,7 @@ const CardOut = ({ record, onBack }) => {
   return (
     <div className="container">
       <div className="row vh-80">
-        <div className="col-6-ld box-shadow1 recorddetails">
+        <div className="col-12-ld box-shadow1 recorddetails">
           <h2 className="text-center white">{record.name}</h2>
           <div className="about">
             <h3 className="white">About</h3>
@@ -157,32 +160,6 @@ const CardOut = ({ record, onBack }) => {
           )}
         </div>
 
-        <div className="cardoutimages col-6-ld">
-          <div className="box-shadow1 bannerimage">
-            <img
-              src={record.bannerimage}
-              alt="Banner"
-              onClick={() => imgClick(record.bannerimage, 0)}
-            />
-          </div>
-
-          <div className="container slideimages">
-            <Slider ref={sliderRef} {...settings}>
-              {allPhotos.slice(1).map((photo, index) => (
-                <div key={index} className="slidingimages">
-                  <img
-                    src={photo}
-                    className="fluid slide-image"
-                    id={`photo-${index}`}
-                    alt={`${record.name} view ${index + 1}`}
-                    onClick={() => imgClick(photo, index + 1)}
-                    loading="lazy"
-                  />
-                </div>
-              ))}
-            </Slider>
-          </div>
-        </div>
       </div>
 
       <div className="flex jcc aic text-center m-auto">

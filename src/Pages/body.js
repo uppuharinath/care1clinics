@@ -1,3 +1,4 @@
+import { useAuth } from "../contexts/auth";
 import records from "../json/services.json";
 import { useState } from "react";
 import CardOut from "../../src/cardout";
@@ -7,7 +8,7 @@ import { GiAutoRepair, GiNoodles } from "react-icons/gi";
 import { PiBuildingApartmentDuotone } from "react-icons/pi";
 import { SlBasket } from "react-icons/sl";
 import Heading from "./heading";
-import { useAuth } from "../contexts/auth";
+
 const Body = ({ searchInput }) => {
   const { userLoggedIn, currentUser } = useAuth();
   const [selectedRecord, setSelectedRecord] = useState(null);

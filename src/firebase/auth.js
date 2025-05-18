@@ -7,7 +7,9 @@ import {
   signOut,
   sendPasswordResetEmail,
   updatePassword,
-  sendEmailVerification
+  sendEmailVerification,
+  signInWithRedirect,    // <-- add this
+  getRedirectResult 
 } from "firebase/auth";
 import { app } from "./firebase";
 
@@ -51,6 +53,29 @@ export const doSignInWithGoogle = async () => {
     throw error;
   }
 };
+
+export const doSignInWithGoogleRedirect = () => {
+  const provider = new GoogleAuthProvider();
+  provider.setCustomParameters({
+    prompt: 'select_account'
+  });
+  signInWithRedirect(auth, provider);
+};
+
+export const handleRedirectResult = async () => {
+  try {
+    const result = await getRedirectResult(auth);
+    if (result) {
+      // User signed in via redirect
+      return result;
+    }
+    return null; // No redirect result found
+  } catch (error) {
+    console.error("Redirect sign-in error:", error);
+    throw error;
+  }
+};
+
 
 export const doSignOut = async () => {
   try {

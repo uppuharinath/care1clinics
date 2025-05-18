@@ -3,7 +3,7 @@ import Header from "../src/Components/Header/index";
 import './App.css';
 import './custome.css';
 import { useState } from "react";
-import Body from "./Pages/body";
+import Body from "./Pages/body - Copy";
 import Register from "./Components/auth/register/register";
 import Login from "./Components/auth/login/login";
 import { AuthProvider } from "./contexts/auth";

@@ -5,13 +5,13 @@ import { getAuth } from "firebase/auth";
 
 // ✅ Firebase configuration (keep this secure in production)
 const firebaseConfig = {
-  apiKey: "AIzaSyCqLr-gBH-Xv_hu-ZFr5NkAoCRMxiq9orQ",
-  authDomain: "tadalocalshops.firebaseapp.com",
-  projectId: "tadalocalshops",
-  storageBucket: "tadalocalshops.appspot.com", // ✅ fixed typo: was "firebasestorage.app"
-  messagingSenderId: "861595347255",
-  appId: "1:861595347255:web:222d3ebca8aea7cd1312b2",
-  measurementId: "G-HZXMPY7PR0" // optional
+  apiKey: "AIzaSyBPuUvbBOVBOxxguY0_5qOIxorOKwzGJZ0",
+  authDomain: "care1clinics-d8312.firebaseapp.com",
+  projectId: "care1clinics-d8312",
+storageBucket: "care1clinics-d8312.appspot.com",
+   messagingSenderId: "125767823861",
+  appId: "1:125767823861:web:c5417bae44b208fb20f0bc",
+  measurementId: "G-JKE33B7D4F"
 };
 
 // ✅ Initialize Firebase
