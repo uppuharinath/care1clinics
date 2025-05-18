@@ -13,7 +13,7 @@ import ProtectedRoute from "./Components/auth/ProtectedRoute";
 
 function App() {
   const [searchInput, setSearchInput] = useState("");
-  const [userProfile, setUserProfile] = useState(null);
+  // const [userProfile, setUserProfile] = useState(null);
 
   return (
     <BrowserRouter>

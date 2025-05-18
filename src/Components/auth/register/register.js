@@ -157,9 +157,9 @@ useEffect(() => {
     setErrorMessage(message);
   };
 
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
+  // const togglePasswordVisibility = () => {
+  //   // setShowPassword(!showPassword);
+  // };
 
   if (userLoggedIn) {
     return <Navigate to={currentUser?.emailVerified ? '/home' : '/verify-email'} replace />;
