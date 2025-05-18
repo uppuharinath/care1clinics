@@ -13,7 +13,6 @@ import ProtectedRoute from "./Components/auth/ProtectedRoute";
 
 function App() {
   const [searchInput, setSearchInput] = useState("");
-  const [userProfile, setUserProfile] = useState(null);
 
   return (
     <BrowserRouter>
@@ -28,7 +27,6 @@ function App() {
 
           {/* Protected Routes */}
           <Route element={<ProtectedRoute />}>
-            <Route path="/profile" element={<Profile userProfile={userProfile} />} />
           </Route>
         </Routes>
       </AuthProvider>

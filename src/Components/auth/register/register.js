@@ -24,7 +24,6 @@ const Register = () => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
-  const [showPassword, setShowPassword] = useState(false);
 
   // Redirect if already logged in
 useEffect(() => {
@@ -157,9 +156,7 @@ useEffect(() => {
     setErrorMessage(message);
   };
 
-  // const togglePasswordVisibility = () => {
-  //   // setShowPassword(!showPassword);
-  // };
+
 
   if (userLoggedIn) {
     return <Navigate to={currentUser?.emailVerified ? '/home' : '/verify-email'} replace />;
@@ -267,7 +264,7 @@ useEffect(() => {
               <input
                 id="password"
                 name="password"
-                type={showPassword ? "text" : "password"}
+                type="password"
                 autoComplete="new-password"
                 required
                 value={formData.password}
@@ -284,7 +281,7 @@ useEffect(() => {
               <input
                 id="confirmPassword"
                 name="confirmPassword"
-                type={showPassword ? "text" : "password"}
+                type="password"
                 autoComplete="new-password"
                 required
                 value={formData.confirmPassword}
