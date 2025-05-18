@@ -8,7 +8,7 @@ const LoginHome = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <div className="blue">
+    <div className="blue this1">
       {currentUser && (
         <div className="btn">
           <SignOutButton />

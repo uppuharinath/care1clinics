@@ -7,9 +7,11 @@ import { GiAutoRepair, GiNoodles } from "react-icons/gi";
 import { PiBuildingApartmentDuotone } from "react-icons/pi";
 import { SlBasket } from "react-icons/sl";
 import Heading from "./heading";
-
+import { useAuth } from "../contexts/auth";
+const currentUser = useAuth.currentUser;
 
 const Body = ({ searchInput }) => {
+  const { userLoggedIn, currentUser } = useAuth();
   const [selectedRecord, setSelectedRecord] = useState(null);
   const [files, setFiles] = useState([]);
   const [isUploading, setIsUploading] = useState(false);
@@ -73,12 +75,15 @@ const Body = ({ searchInput }) => {
 
   const uniqueCategories = [...new Set(records.map((r) => r.category))];
 
+
   return (
     <div className="container main">
       <Heading />
       
-   
+      {/* Upload Section for logged-in users */}
+      {userLoggedIn && (
         <div className="upload-section container b-1px black">
+          <h1>Hi, {currentUser.displayName}</h1>
           <h3>Upload Your Business Photos</h3>
           <p>Showcase your business with up to 5 photos</p>
           
@@ -146,7 +151,7 @@ const Body = ({ searchInput }) => {
             )}
           </div>
         </div>
-   
+      )}
 
       {selectedRecord ? (
         <CardOut record={selectedRecord} onBack={handleBack} />

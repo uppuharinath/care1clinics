@@ -24,7 +24,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/verify-email" element={<VerifyEmail />} />
 
-          {/* Protected Routes */}
+     
           <Route element={<ProtectedRoute />}>
           </Route>
         </Routes>
