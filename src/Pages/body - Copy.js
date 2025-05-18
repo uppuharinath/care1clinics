@@ -2,11 +2,7 @@ import { useAuth } from "../contexts/auth";
 import records from "../json/services.json";
 import { useState } from "react";
 import CardOut from "../../src/cardout";
-import { FaHotel } from "react-icons/fa";
-import { TbAirConditioning } from "react-icons/tb";
-import { GiAutoRepair, GiNoodles } from "react-icons/gi";
-import { PiBuildingApartmentDuotone } from "react-icons/pi";
-import { SlBasket } from "react-icons/sl";
+
 import Heading from "./heading";
 
 const Body = ({ searchInput }) => {
