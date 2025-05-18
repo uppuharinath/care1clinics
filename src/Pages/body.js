@@ -7,7 +7,6 @@ import { GiAutoRepair, GiNoodles } from "react-icons/gi";
 import { PiBuildingApartmentDuotone } from "react-icons/pi";
 import { SlBasket } from "react-icons/sl";
 import Heading from "./heading";
-import { useAuth } from "../contexts/auth";
 
 
 const Body = ({ searchInput }) => {
