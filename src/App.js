@@ -9,6 +9,7 @@ import Login from "./Components/auth/login/login";
 import { AuthProvider } from "./contexts/auth";
 import VerifyEmail from "./Components/auth/verifyemail/VerifyEmail";
 import ProtectedRoute from "./Components/auth/ProtectedRoute";
+import Footer from "./Pages/footer"
 
 function App() {
   const [searchInput, setSearchInput] = useState("");
@@ -28,6 +29,7 @@ function App() {
           <Route element={<ProtectedRoute />}>
           </Route>
         </Routes>
+        <Footer />
       </AuthProvider>
     </BrowserRouter>
   );

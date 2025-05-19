@@ -2,7 +2,6 @@ import { useAuth } from "../contexts/auth";
 import records from "../json/services.json";
 import { useState } from "react";
 import CardOut from "../../src/cardout";
-
 import Heading from "./heading";
 
 const Body = ({ searchInput }) => {
@@ -26,7 +25,6 @@ const Body = ({ searchInput }) => {
     setIsUploading(true);
     setUploadProgress(0);
 
-    // Simulate upload progress
     const interval = setInterval(() => {
       setUploadProgress((prev) => {
         if (prev >= 100) {
@@ -46,7 +44,7 @@ const Body = ({ searchInput }) => {
 
     const regex = new RegExp(`(${term})`, "gi");
     return text.split(regex).map((part, index) =>
-      typeof part === "string" && part.toLowerCase() === term.toLowerCase() ? (
+      part.toLowerCase() === term.toLowerCase() ? (
         <span key={index} style={{ backgroundColor: "skyblue" }}>
           {part}
         </span>
@@ -56,53 +54,34 @@ const Body = ({ searchInput }) => {
     );
   };
 
-  // Filtering includes phone and address fields now
   const filteredRecords = records.filter((record) => {
-    if (!searchInput?.trim()) return true;
+    if (!searchInput?.trim()) return false;
 
     const term = searchInput.toLowerCase();
-
-    // Fields to check other than id
-    const otherFields = [
+    const fieldsToCheck = [
       record.name,
       record.type,
       record.phone?.toString(),
       record.address,
+      record.id?.toString(),
+      record.Allergies,
+      record.notes,
     ];
 
-    // Check other fields (case-insensitive includes)
-    const otherMatch = otherFields.some(
+    return fieldsToCheck.some(
       (field) =>
         typeof field === "string" && field.toLowerCase().includes(term)
     );
-
-    // Special handling for record.id
-    const idLower = typeof record.id === "string" ? record.id.toLowerCase() : "";
-
-    let idMatch = false;
-    if (term === "u") {
-      // Match only if record.id is exactly "u" (case-insensitive)
-      idMatch = idLower === "u";
-    } else if (term.length > 1) {
-      // For longer terms, do case-insensitive includes
-      idMatch = idLower.includes(term);
-    }
-
-    return otherMatch || idMatch;
   });
 
-
-
   return (
-    <div className="container main">
+    <div className="container main this">
       <Heading />
 
-      {/* Upload Section for logged-in users */}
       {userLoggedIn && (
         <div className="upload-section container b-1px black">
           <h1>Hi, {currentUser.displayName}</h1>
-          <h3>Upload Your Business Photos</h3>
-          <p>Showcase your business with up to 5 photos</p>
+          <h3>Upload Your Receipts</h3>
 
           <div className="upload-area black">
             <input
@@ -117,7 +96,7 @@ const Body = ({ searchInput }) => {
 
             <label htmlFor="business-photos" className="upload-label">
               {files.length > 0 ? (
-                <div className="file-list ">
+                <div className="file-list">
                   <p>Selected {files.length} file(s):</p>
                   <ul className="black">
                     {files.map((file, index) => (
@@ -150,7 +129,10 @@ const Body = ({ searchInput }) => {
                   {isUploading ? "Uploading..." : "Upload Photos"}
                 </button>
                 {!isUploading && (
-                  <button onClick={() => setFiles([])} className="cancel-button">
+                  <button
+                    onClick={() => setFiles([])}
+                    className="cancel-button"
+                  >
                     Clear Selection
                   </button>
                 )}
@@ -173,47 +155,50 @@ const Body = ({ searchInput }) => {
       {selectedRecord ? (
         <CardOut record={selectedRecord} onBack={handleBack} />
       ) : (
-        <div className="allcards flex-column ">
-          {filteredRecords.map((record) => (
-            <div key={record.id} className="box-shadow1 mt-1r">
-              <li>Name : {highlightSearchTerm(record.name, searchInput)} </li>
-              <li>Age : {record.age}Y</li>
-              <li>Patient Id : {highlightSearchTerm(record.id, searchInput)}</li>
-        
+        userLoggedIn &&
+        searchInput.trim() &&
+        filteredRecords.length > 0 && (
+          <div className="allcards this1 flex-column">
+            {filteredRecords.map((record) => (
+              <div key={record.id} className="box-shadow1 mt-1r">
+                <li>Name : {highlightSearchTerm(record.name, searchInput)}</li>
+                <li>Age : {record.age}Y</li>
+                <li>
+                  Patient Id : {highlightSearchTerm(record.id, searchInput)}
+                </li>
 
-{record.phone && (
-  <li>
-    Phone No: {highlightSearchTerm(record.phone.toString(), searchInput)}
-  </li>
-)}
+                {record.phone && (
+                  <li>
+                    Phone No:{" "}
+                    {highlightSearchTerm(record.phone.toString(), searchInput)}
+                  </li>
+                )}
 
+                {record.Allergies && (
+                  <li>
+                    Allergies:{" "}
+                    {highlightSearchTerm(record.Allergies, searchInput)}
+                  </li>
+                )}
 
+                {record.notes && (
+                  <li>
+                    <div className="col-11-ld">
+                      {highlightSearchTerm(record.notes, searchInput)}
+                    </div>
+                  </li>
+                )}
 
-{record.notes && (
-  <li>
-    
-      Allergies : {highlightSearchTerm(record.Allergies, searchInput)}
-    
-  </li>
-)}
-
-{record.notes && (
-  <li>
-    <div className="col-11-ld">
-      {highlightSearchTerm(record.notes, searchInput)}
-    </div>
-  </li>
-)}
-
-
- <button className="btn" onClick={() => handleCardOut(record)}>Edit</button>                 
-
-
-            </div>
-          ))}
-        </div>
+                <button className="btn" onClick={() => handleCardOut(record)}>
+                  Edit
+                </button>
+              </div>
+            ))}
+          </div>
+        )
       )}
     </div>
   );
 };
+
 export default Body;
