@@ -18,9 +18,9 @@ const Heading = () => {
                   Multi speciality Doctor <span>Naveed Ali</span> Now in Varadaiahpalem
                 </h1>
               </div>
-              <div className="doctorpic col-12 flex flex-column text-ld jcsa">
+              <div className="doctorpic col-12 flex flex-column text-ld jcc aic">
                   <img src={pic} alt="Doctor"   />
-                  <h3 className='text-blue bg-white w-70'>MBBS DOCTOR || Reg No. 80105</h3>
+                  <h3 className='text-blue bg-white w-60 text-center'>MBBS DOCTOR,  Reg No. 80105</h3>
               </div>
 
               <div className="col-12">
