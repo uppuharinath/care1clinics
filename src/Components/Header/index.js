@@ -1,5 +1,5 @@
-// import Navbar from "../../Pages/navbar";
-// import { MdSavedSearch } from "react-icons/md";
+import Navbar from "../../Pages/navbar";
+import { MdSavedSearch } from "react-icons/md";
 import Navsidebar from "../../Pages/navsidebar";
 import LoginHome from "../../loginhome";
 import Plus from "../Plus/plus";      
@@ -63,16 +63,16 @@ const Header = ({ searchInput, setSearchInput }) => {
       </div>
 
 
-      {/* <div className="container">
+      <div className="container">
         <div className="row flex jcc box-shadow1">
-          <div className="col-4">
+          <div className="col-9 ">
             <Navbar />
           </div>
 
-          <div className="flex jcc aic col-6 search">
+          <div className="flex jcc aic col-3 search ">
             <input
               type="text"
-              placeholder="Search patient..."
+              placeholder="Search ..."
               className="input"
               value={searchInput}
               onChange={handleInputChange}
@@ -83,7 +83,7 @@ const Header = ({ searchInput, setSearchInput }) => {
             </button>
           </div>
         </div>
-      </div> */}
+      </div>
       <Navsidebar />
 
       {/* Future layout code can be uncommented and used here */}
