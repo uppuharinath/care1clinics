@@ -1030,3 +1030,95 @@ footer{
   color:white;
   margin-bottom:0;
 }
+
+
+
+
+
+.clinicname {
+  display: inline-block;
+  font-weight: bold;
+  font-size: 1.5rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  letter-spacing: 0.3rem;
+  white-space: nowrap;
+}
+.clinicname span {
+  display: inline-block;
+  background: linear-gradient(135deg, #000000c0 0%, #2575fc 100%);
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important; /* <-- You must keep this */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.1s ease forwards, gradientToggle 1s ease-in-out infinite alternate;
+}
+
+/* Delay each letter for letter-by-letter effect */
+.clinicname span:nth-child(1) { animation-delay: 0s, 0s; }
+.clinicname span:nth-child(2) { animation-delay: 0.05s, 0s; }
+.clinicname span:nth-child(3) { animation-delay: 0.1s, 0s; }
+.clinicname span:nth-child(4) { animation-delay: 0.15s, 0s; }
+.clinicname span:nth-child(5) { animation-delay: 0.2s, 0s; }
+.clinicname span:nth-child(6) { animation-delay: 0.25s, 0s; }
+.clinicname span:nth-child(7) { animation-delay: 0.3s, 0s; }
+.clinicname span:nth-child(8) { animation-delay: 0.35s, 0s; }
+.clinicname span:nth-child(9) { animation-delay: 0.4s, 0s; }
+.clinicname span:nth-child(10) { animation-delay: 0.45s, 0s; }
+.clinicname span:nth-child(11) { animation-delay: 0.5s, 0s; }
+.clinicname span:nth-child(12) { animation-delay: 0.55s, 0s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gradientToggle {
+  0% {
+    background: linear-gradient(135deg, hsla(0, 0%, 3%, 0.747) 0%, #2575fc 100%);
+  }
+  100% {
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+  }
+}
+
+
+.plus-symbol{
+  font-weight: 900;
+  font-size:xx-large;
+
+}
+.doctorpic{
+   margin:0 auto;
+   margin-left: auto;
+   margin-right: auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+ 
+}
+.doctorpic img{
+  width:20%;
+  height:auto;
+  border-radius: 10px;
+}
+
+.doctorpic h3{
+  font-family: var(--font-Mont);
+  padding:1rem 2rem;
+  border-radius: 10%;
+}
+
+.experience li {
+  display: flex;
+}
+.experience li span {
+  display: inline; /* ensures it stays inline with icon */
+}
+
+.experience div{
+  margin-right:0.2rem;
+  color:black;
+}
+

@@ -2,6 +2,7 @@ import Navbar from "../../Pages/navbar";
 import { MdSavedSearch } from "react-icons/md";
 import Navsidebar from "../../Pages/navsidebar";
 import LoginHome from "../../loginhome";
+import Plus from "../Plus/plus";      
 // import Navigation from "../../Pages/navigation";
 // import CountryDropdown from "../CountryDropdown";
 // import { CiUser } from "react-icons/ci";
@@ -23,17 +24,41 @@ const Header = ({ searchInput, setSearchInput }) => {
   };
 
   return (
-    <div className="header-wrapper">
+    <div className="header-wrapper ">
       <div className="container header">
         <div className="text-center branding flex flex-column black jcsa jcc aic">
           <div>
-            <strong>VARADAIAHPALEM : <span className="clinicname">Care<div className="one">1</div>Clinics</span></strong> 
+          
+
+            <strong >
+              
+              <Plus/>
+              
+            <span className="clinicname">
+
+              <span>C</span>
+              <span>a</span>
+              <span>r</span>
+              <span>e</span>
+              <span className="one">1</span>
+              <span>C</span>
+              <span>l</span>
+              <span>i</span>
+              <span>n</span>
+              <span>i</span>
+              <span>c</span>
+              <span>s</span>
+            </span>
+
+
+            </strong> 
           </div>
-          <div ><strong>Contact :</strong> <span className="clinicname">9494847862</span> </div>
-          <div>
+          <div > <span className=" text-black"> <strong>Contact :</strong> 9490049955</span> </div>
+         
+        </div>
+         <div>
             <LoginHome />
           </div>
-        </div>
       </div>
 
 

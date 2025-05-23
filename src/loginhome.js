@@ -8,12 +8,14 @@ const LoginHome = () => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <div className="blue this1">
-      {currentUser && (
+    <div className="container bg-black">
+      <div className="row col-12 flex jcc aic">
+        {currentUser && (
         <div className="btn">
           <SignOutButton />
         </div>
       )}
+      </div>
     </div>
   );
 };
