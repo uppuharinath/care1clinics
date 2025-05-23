@@ -40,6 +40,16 @@
     width: 80vw !important;
   }
 
+  .doctorname{
+    font-size: 12vh !important;
+  }
+
+  .doctorname span{
+    font-size:11vh !important;
+  }
+
+  
+
 }
 /* END NORMAL MEDIA */
 
