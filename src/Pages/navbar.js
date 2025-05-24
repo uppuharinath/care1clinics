@@ -4,9 +4,11 @@ import { FaAngleDown } from "react-icons/fa";
 const Navbar = () => {
   const navItems = [
     { id: 1, name: "Home", path: "/", hasIcon: true },
+    { id: 5, name: "Gallery", path: "/gallery", hasIcon: true },
     // { id: 2, name: "Shop", path: "/shop", hasIcon: true },
-    // { id: 3, name: "About", path: "/about", hasIcon: false },
+    { id: 3, name: "About", path: "/about", hasIcon: false },
     // { id: 4, name: "Contact", path: "/contact", hasIcon: false }
+    
   ];
 
   return (

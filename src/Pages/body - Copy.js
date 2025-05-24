@@ -75,7 +75,7 @@ const Body = ({ searchInput }) => {
   });
 
   return (
-    <div className="container main this">
+    <div className="container main">
       <Heading />
 
       {userLoggedIn && (
@@ -158,7 +158,7 @@ const Body = ({ searchInput }) => {
         userLoggedIn &&
         searchInput.trim() &&
         filteredRecords.length > 0 && (
-          <div className="allcards this1 flex-column">
+          <div className="allcards  flex-column">
             {filteredRecords.map((record) => (
               <div key={record.id} className="box-shadow1 mt-1r">
                 <li>Name : {highlightSearchTerm(record.name, searchInput)}</li>

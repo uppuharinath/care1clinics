@@ -7,7 +7,7 @@ const Heading = () => {
   const { currentUser, isLoading } = useAuth();
 
   return (
-    <div className="container this white">
+    <div className="container white">
       <div className="row jcc aic box-shadow1">
         <div className="col-9-ld">
         
@@ -20,7 +20,7 @@ const Heading = () => {
               </div>
               <div className="doctorpic col-12 flex flex-column text-ld jcc aic">
                   <img src={pic} alt="Doctor"   />
-                  <h3 className='text-blue bg-white w-80 text-center'>MBBS DOCTOR <span className='red'>Reg No. 80105</span>  </h3>
+                  <h3 className='text-blue bg-white text-center'>Dr. Ali [ MBBS ] <span className='red'>Reg No. 80105</span>  </h3>
               </div>
 
               <div className="col-12">

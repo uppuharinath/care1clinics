@@ -226,40 +226,40 @@ flex : 0 0 calc(100%/1);
 }           
 
 
-.row .col-1-xl {
+.row .col-1-xld {
     flex : 0 0 calc(100%/12);
 }
-.row .col-2-xl {
+.row .col-2-xld {
     flex : 0 0 calc(100%/6);
 }
-.row .col-3-xl {
+.row .col-3-xld {
     flex : 0 0 calc(100%/4);
 }
-.row .col-4-xl {
+.row .col-4-xld {
     flex : 0 0 calc(100%/3);
 }
-.row .col-5-xl {
+.row .col-5-xld {
     flex : 0 0 calc(100%/2.4);
 }
-.row .col-6-xl {
+.row .col-6-xld {
     flex : 0 0 calc(100%/2);
 }
-.row .col-7-xl {
+.row .col-7-xld {
     flex : 0 0 calc(100%/1.714285);
 }
-.row .col-8-xl {
+.row .col-8-xld {
     flex : 0 0 calc(100%/1.5);
 }
-.row .col-9-xl {
+.row .col-9-xld {
     flex : 0 0 calc(100%/1.333333);
 }
-.row .col-10-xl{
+.row .col-10-xld{
     flex : 0 0 calc(100%/1.2);
 }
-.row .col-11-xl{
+.row .col-11-xld{
     flex : 0 0 calc(100%/1.090909);
 }
-.row .col-12-xl{ 
+.row .col-12-xld{ 
     flex : 0 0 calc(100%/1);
 }
 }

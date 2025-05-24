@@ -3,6 +3,9 @@ import { MdSavedSearch } from "react-icons/md";
 import Navsidebar from "../../Pages/navsidebar";
 import LoginHome from "../../loginhome";
 import Plus from "../Plus/plus";      
+import logo from "../../../src/assets/logo.jpeg"; 
+import { useNavigate } from "react-router-dom";     
+
 // import Navigation from "../../Pages/navigation";
 // import CountryDropdown from "../CountryDropdown";
 // import { CiUser } from "react-icons/ci";
@@ -18,6 +21,8 @@ const Header = ({ searchInput, setSearchInput }) => {
     console.log("Search term:", e.target.value);
   };
 
+  const navigate = useNavigate();
+
   const handleSearch = () => {
     console.log("Search term HANDLING:", searchInput);
     // Apply your search logic here
@@ -27,6 +32,10 @@ const Header = ({ searchInput, setSearchInput }) => {
     <div className="header-wrapper ">
       <div className="container header">
         <div className="text-center branding flex  gray jcsa jcc aic">
+          <div className="logo-nav cursor" onClick={() => navigate("/")}>
+              <img src={logo} className="logo-nav-img" alt="Logo" />
+          </div>
+          
           <div>
           
 

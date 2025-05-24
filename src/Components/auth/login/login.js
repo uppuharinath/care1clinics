@@ -117,7 +117,7 @@ const onGoogleSignIn = async (e) => {
   return (
     <div className="container login-container bg-black plpr-1r">
       <div className="login-card">
-        <h2 className="login-title text-center pt-1r">Login to View Best of Tada Local Services</h2>
+        <h2 className="login-title text-center pt-1r">Login to access Patient Details</h2>
         <hr/>
        
        <div className="row">

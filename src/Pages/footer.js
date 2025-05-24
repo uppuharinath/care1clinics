@@ -4,7 +4,7 @@ const Footer = () => {
         <div className="row">
           <div className="col-12 flex jcc aic">
             <div className="care1clinic text-sm text-gray-600">
-              &copy; {new Date().getFullYear()} care1clinic. All rights reserved.
+              © 2025 Care1 Clinics – Visit us at care1clinics.com
             </div>
           </div>
         </div>
