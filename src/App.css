@@ -46,7 +46,7 @@ body::-webkit-scrollbar {
   display: inline-block;
 }
 .doctorname {
-  background: linear-gradient(135deg, hsla(180, 15%, 94%, 0.747) 0%, #2575fc 100%);
+  background: linear-gradient(135deg, hsla(180, 6%, 6%, 0.747) 0%, #2575fc 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;
@@ -64,7 +64,7 @@ body::-webkit-scrollbar {
 }
 
 .doctorname span{
-  background: linear-gradient(135deg, hsl(66, 95%, 49%) 0%, #cef70393 100%);
+  background: linear-gradient(135deg, hsl(68, 84%, 20%) 0%, #4a1d03da 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: bold;

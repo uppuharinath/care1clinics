@@ -74,7 +74,25 @@
        height: auto;
 }
 
-  
+.clinicname {
+    background: linear-gradient(135deg, hsla(0, 0%, 3%, 0.747) 0%, #2575fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    font-size: 100% !important;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    letter-spacing: 0.3rem;
+}
+
+
+.logo-nav img {
+  height:5vh !important;
+  width:5vh !important;
+    border-radius: 70%;
+    pointer-events: auto;
+    cursor: pointer;
+}
+
 
 }
 /* END NORMAL MEDIA */

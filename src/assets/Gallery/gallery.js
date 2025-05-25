@@ -9,7 +9,7 @@ const Gallery = () => {
 
   return (
     <div className="container ">
-      <h1>Photos of care1clinics.com</h1>
+      <h1 className="text-center purple  uppercase">Care1 Clinics GALLERY</h1>
       <div className="row gallery flex jcc jcsa  aic text-center">
         
         {images.map((src, index) => (

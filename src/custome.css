@@ -1157,6 +1157,7 @@ border: 5px solid rgba(255, 255, 255, 0.608);
 
 .gallery{
   margin:1rem auto;
+  padding:1rem 2rem;
 }
 
 .gallery >div{

@@ -4,7 +4,8 @@ import Navsidebar from "../../Pages/navsidebar";
 import LoginHome from "../../loginhome";
 import Plus from "../Plus/plus";      
 import logo from "../../../src/assets/logo.jpeg"; 
-import { useNavigate } from "react-router-dom";     
+import { useNavigate } from "react-router-dom";   
+import { useAuth } from "../../contexts/auth";  
 
 // import Navigation from "../../Pages/navigation";
 // import CountryDropdown from "../CountryDropdown";
@@ -16,6 +17,7 @@ import { useNavigate } from "react-router-dom";
 // import { useState } from 'react';
 
 const Header = ({ searchInput, setSearchInput }) => {
+  const { userLoggedIn, isLoading} = useAuth()
   const handleInputChange = (e) => {
     setSearchInput(e.target.value);
     console.log("Search term:", e.target.value);
@@ -74,26 +76,35 @@ const Header = ({ searchInput, setSearchInput }) => {
 
       <div className="container">
         <div className="row flex jcc box-shadow1">
-          <div className="col-9 ">
+          <div className="col-12 ">
             <Navbar />
-          </div>
-
-          <div className="flex jcc aic col-3 search ">
-            <input
-              type="text"
-              placeholder="Search ..."
-              className="input"
-              value={searchInput}
-              onChange={handleInputChange}
-              onKeyUp={(e) => e.key === "Enter" && handleSearch()}
-            />
-            <button className="icon-btn" onClick={handleSearch}>
-              <MdSavedSearch />
-            </button>
           </div>
         </div>
       </div>
-      <Navsidebar />
+{userLoggedIn && !isLoading && (
+      <div className="container searching">
+        <div className="row">
+          <div className="col-12 this">
+              <div className=" flex w-50 jcc aic search ">
+                  <input
+                    type="text"
+                    placeholder="Search ..."
+                    className="input"
+                    value={searchInput}
+                    onChange={handleInputChange}
+                    onKeyUp={(e) => e.key === "Enter" && handleSearch()}
+                  />
+                  
+                  <button className="icon-btn" onClick={handleSearch}>
+                    <MdSavedSearch />
+                  </button>
+          </div>
+          </div>
+          <div className="col-6"><Navsidebar /></div>
+        </div>
+      </div>
+)
+}
 
       {/* Future layout code can be uncommented and used here */}
     </div>
