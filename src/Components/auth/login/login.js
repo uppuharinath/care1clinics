@@ -47,7 +47,7 @@ const Login = () => {
   useEffect(() => {
     if (userLoggedIn) {
       const redirectPath = currentUser?.emailVerified 
-        ? location.state?.from || '/'
+        ? location.state?.from || '/dashboard'
         : '/verify-email';
       navigate(redirectPath, { replace: true });
     }

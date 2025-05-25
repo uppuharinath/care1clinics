@@ -1,18 +1,14 @@
-
+// src/contexts/auth.js
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { auth } from '../../firebase/firebase';
-import { 
+import {
   onAuthStateChanged,
   signOut as firebaseSignOut,
   GoogleAuthProvider,
   signInWithPopup
-} from 'firebase/auth'
+} from 'firebase/auth';
 
 const AuthContext = createContext();
-
-console.log("onAuthStateChanged: ")
-console.log(onAuthStateChanged)
-
 
 export const AuthProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useState(null);
@@ -20,22 +16,11 @@ export const AuthProvider = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
 
-console.log("onAuthStateChanged after login: ")
-console.log(onAuthStateChanged)
-console.log("currentUser after: ")
-console.log(currentUser)
-console.log("userLoggedIn after: ")
-console.log(userLoggedIn)
-console.log("isLoading after: ")
-console.log(isLoading)
-console.log("error after: ")
-console.log(error)
-
-
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
+      console.log('[Auth] onAuthStateChanged triggered');
       if (user) {
-        setCurrentUser({
+        const formattedUser = {
           uid: user.uid,
           email: user.email,
           emailVerified: user.emailVerified,
@@ -45,11 +30,14 @@ console.log(error)
             creationTime: user.metadata.creationTime,
             lastSignInTime: user.metadata.lastSignInTime
           }
-        });
+        };
+        setCurrentUser(formattedUser);
         setUserLoggedIn(true);
+        console.log('[Auth] User signed in:', formattedUser);
       } else {
         setCurrentUser(null);
         setUserLoggedIn(false);
+        console.log('[Auth] User signed out');
       }
       setIsLoading(false);
     });
@@ -61,10 +49,11 @@ console.log(error)
     try {
       setIsLoading(true);
       await firebaseSignOut(auth);
-      // Success - state will update via onAuthStateChanged
+      console.log('[Auth] Sign-out successful');
     } catch (err) {
+      console.error('[Auth] Sign-out error:', err.message);
       setError(err.message);
-      throw err; // Re-throw to allow handling in components
+      throw err;
     } finally {
       setIsLoading(false);
     }
@@ -75,7 +64,9 @@ console.log(error)
       setIsLoading(true);
       const provider = new GoogleAuthProvider();
       await signInWithPopup(auth, provider);
+      console.log('[Auth] Google sign-in successful');
     } catch (err) {
+      console.error('[Auth] Google sign-in error:', err.message);
       setError(err.message);
       throw err;
     } finally {
@@ -95,8 +86,10 @@ console.log(error)
 
   return (
     <AuthContext.Provider value={value}>
-      {!isLoading ? children : (
-        <div className="auth-loading-overlay ">
+      {!isLoading ? (
+        children
+      ) : (
+        <div className="auth-loading-overlay">
           <div className="spinner"></div>
           <p>Loading authentication state...</p>
         </div>

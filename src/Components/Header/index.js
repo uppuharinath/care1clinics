@@ -103,6 +103,7 @@ const Header = ({ searchInput, setSearchInput }) => {
           <div className="col-6"><Navsidebar /></div>
         </div>
       </div>
+      
 )
 }
 
