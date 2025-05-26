@@ -13,7 +13,7 @@ import {
 import { db } from '../../firebase/firebase';
 
 const Dashboard = () => {
-  const { currentUser, signOut } = useAuth();
+  const { currentUser } = useAuth();
 
   // Tabs
   const [activeTab, setActiveTab] = useState('register');
