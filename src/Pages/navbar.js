@@ -25,29 +25,26 @@ const Navbar = () => {
       <div className="row">
         <ul className="flex col-6">
           {navItems.map((item) => (
-            <li key={item.id} className="flex items-center">
-              {item.name === "Dashboard" ? (
-                <a
-                  href="#"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    openDashboardFullscreen();
-                  }}
-                  className="flex jcc aic items-center font-mont white"
-                >
-                  {item.name}
-                </a>
-              ) : (
-                <a
-                  href={item.path}
-                  className="flex jcc aic items-center font-mont white"
-                >
-                  {item.name}
-                  {item.hasIcon && <FaAngleDown className="white" />}
-                </a>
-              )}
-            </li>
-          ))}
+  <li key={item.id} className="flex items-center">
+    {item.name === "Dashboard" ? (
+      <button
+        onClick={openDashboardFullscreen}
+        className="flex jcc aic items-center font-mont white bg-transparent border-none cursor-pointer"
+      >
+        {item.name}
+      </button>
+    ) : (
+      <a
+        href={item.path}
+        className="flex jcc aic items-center font-mont white"
+      >
+        {item.name}
+        {item.hasIcon && <FaAngleDown className="white" />}
+      </a>
+    )}
+  </li>
+))}
+
         </ul>
       </div>
     </div>
