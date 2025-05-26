@@ -171,10 +171,10 @@ const Dashboard = () => {
               <>
                 <div className="row flex flex-column jcc aic ">
                   <hr className="mb-1r w-50" />
-                  <p className="mb-1r">
-                    <strong>Welcome:</strong> {currentUser.displayName} <br/>
+                  <p className="mb-1r flex jcc m-auto aic mr-1r">
+                    <strong>Welcome:</strong> {currentUser.displayName} 
 
-                    <button onClick={signOut} className="btn red mb-1r">
+                    <button onClick={signOut} className="flex jcc m-auto btn black text-center">
     Sign Out
   </button>
                   </p>
