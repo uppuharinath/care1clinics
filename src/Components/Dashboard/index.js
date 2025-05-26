@@ -161,36 +161,21 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container mb-1r mt-1r">
       <div className="row">
         <div className="col-12">
           <div className="dashboard-container">
-            <h1 className="text-center black bb">
-              Authorised Persons to update Patients Data
-            </h1>
+            
 
             {currentUser && (
               <>
-                <div className="row flex flex-column jcc aic mb-1r">
+                <div className="row flex flex-column jcc aic ">
                   <hr className="mb-1r w-50" />
                   <p className="mb-1r">
-                    <strong>Welcome:</strong> {currentUser.displayName}
+                    <strong>Welcome:</strong> {currentUser.displayName} <br/>
                   </p>
-                  <p className="mb-1r">
-                    <strong>Email:</strong> {currentUser.email}
-                  </p>
-                  {currentUser.photoURL && (
-                    <img
-                      className="mb-1r"
-                      src={currentUser.photoURL}
-                      alt="Profile"
-                      width="100"
-                      height="100"
-                    />
-                  )}
-                  <button className="mb-1r btn" onClick={signOut}>
-                    Sign Out
-                  </button>
+                                      <h5>Click on the <span className='blue'>Dashboard</span>  to view full screen</h5>
+
                   <hr className="mb-1r w-50" />
                 </div>
 
@@ -390,10 +375,10 @@ const Dashboard = () => {
                     ) : patients.length === 0 ? (
                       <p>No patients found</p>
                     ) : (
-                      <div className="patient-list">
+                      <div className="patient-list black">
                         <table style={{ width: '100%', borderCollapse: 'collapse' }}>
                           <thead>
-                            <tr style={{ backgroundColor: '#f2f2f2' }}>
+                            <tr style={{ backgroundColor: 'gray' }} >
                               <th style={{ padding: '8px', border: '1px solid #ddd' }}>ID</th>
                               <th style={{ padding: '8px', border: '1px solid #ddd' }}>Name</th>
                               <th style={{ padding: '8px', border: '1px solid #ddd' }}>Age</th>
@@ -403,7 +388,7 @@ const Dashboard = () => {
                           </thead>
                           <tbody>
                             {patients.map((patient) => (
-                              <tr key={patient.id} style={{ borderBottom: '1px solid #ddd' }}>
+                              <tr key={patient.id} style={{ borderBottom: '1px solid #ddd' } }>
                                 <td style={{ padding: '8px', border: '1px solid #ddd' }}>{patient.id}</td>
                                 <td style={{ padding: '8px', border: '1px solid #ddd' }}>{patient.name}</td>
                                 <td style={{ padding: '8px', border: '1px solid #ddd' }}>{patient.age}</td>

@@ -50,7 +50,7 @@ const Heading = () => {
 
           {!isLoading && !currentUser ? (
             <>
-              <button className="btn" onClick={() => navigate('/register')}>Signup</button>
+              <button className="btn" onClick={() => navigate('/login')}>Signup</button>
               <button className="btn" onClick={() => navigate('/login')}>Login</button>
             </>
           ) : !isLoading && currentUser ? (
