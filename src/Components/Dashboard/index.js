@@ -13,7 +13,7 @@ import {
 import { db } from '../../firebase/firebase';
 
 const Dashboard = () => {
-  const { currentUser } = useAuth();
+  const { currentUser, signOut } = useAuth();
 
   // Tabs
   const [activeTab, setActiveTab] = useState('register');
@@ -173,6 +173,10 @@ const Dashboard = () => {
                   <hr className="mb-1r w-50" />
                   <p className="mb-1r">
                     <strong>Welcome:</strong> {currentUser.displayName} <br/>
+
+                    <button onClick={signOut} className="btn red mb-1r">
+    Sign Out
+  </button>
                   </p>
                                       <h5>Click on the <span className='blue'>Dashboard</span>  to view full screen</h5>
 
