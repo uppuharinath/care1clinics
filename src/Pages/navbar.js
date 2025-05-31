@@ -29,14 +29,15 @@ const Navbar = () => {
     {item.name === "Dashboard" ? (
       <button
         onClick={openDashboardFullscreen}
-        className="flex jcc aic items-center font-mont white bg-transparent border-none cursor-pointer"
+        className="flex jcc aic items-center font-mont"
       >
-        {item.name}
+        
+        <a href="">{item.name}</a>
       </button>
     ) : (
       <a
         href={item.path}
-        className="flex jcc aic items-center font-mont white"
+        className="flex jcc aic items-center font-mont"
       >
         {item.name}
         {item.hasIcon && <FaAngleDown className="white" />}
