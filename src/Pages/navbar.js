@@ -23,7 +23,7 @@ const Navbar = () => {
   return (
     <div className="container navbar">
       <div className="row">
-        <ul className="flex col-6">
+        <ul className="flex flex-row flex-wrap col-12">
           {navItems.map((item) => (
   <li key={item.id} className="flex items-center">
     {item.name === "Dashboard" ? (
