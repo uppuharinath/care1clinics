@@ -46,7 +46,7 @@ const Heading = () => {
         </div>
 
         <div className="col-3-ld text-center">
-          <div className="text-light text-md">Doctor's Login</div>
+          <div className="text-light text-md doctorslogin">Doctor's Login</div>
 
           {!isLoading && !currentUser ? (
             <>

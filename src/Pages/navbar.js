@@ -21,7 +21,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className="container">
+    <div className="container navbar">
       <div className="row">
         <ul className="flex col-6">
           {navItems.map((item) => (

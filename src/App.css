@@ -1308,7 +1308,7 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  background: rgba(42, 149, 168, 0.974);
+  /* background: rgba(42, 149, 168, 0.974); */
 }
 
 #root{
@@ -1328,7 +1328,7 @@ html, body {
 /*Media vp 0 px or greater*/
 @media(min-width:0px){
   html, body {
-    background: gray;
+    /* background: gray; */
   }
   
   .listings{

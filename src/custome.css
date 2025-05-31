@@ -4,7 +4,8 @@
 
 body{
   font-family: var(--font-Mont);
-  background-color: black;
+  /* background-color: black; */
+  background: linear-gradient(to bottom, rgba(135, 207, 235, 0.304), #f0f8ff, #ffffff);
   color: white;
   /* border: 1px solid red; */
   margin: 0;
@@ -1096,10 +1097,9 @@ footer{
   width:18%;
   height:auto;
   border-radius: 10px;
-  background: rgba(255,255,255,0.5);
 -webkit-backdrop-filter: blur(30px);
-backdrop-filter: blur(30px);
-border: 5px solid rgba(255, 255, 255, 0.608);
+backdrop-filter: blur(100px);
+border: 5px solid #dadada;
 }
 
 .doctorpic h3{
@@ -1167,4 +1167,28 @@ border: 5px solid rgba(255, 255, 255, 0.608);
   height: auto;
  background: linear-gradient(to right, #007bff, #bceb015e);
 
+}
+
+.navbar li a{
+  color:blue !important;
+  font-weight:800;
+    margin-top:1rem !important;
+    font-family: var(--font-Mont);
+}
+
+.navbar li a:hover{
+  color:rgba(0, 0, 255, 0.708) !important;
+  font-weight:800;
+  transition: 0.5s ease;
+
+}
+
+
+.experience {
+    color:rgb(99, 18, 129) !important;
+  font-weight:600;
+}
+
+.doctorslogin{
+  color:brown;
 }
