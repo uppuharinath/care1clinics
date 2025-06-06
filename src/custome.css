@@ -1209,3 +1209,7 @@ border: 5px solid #dadada;
 .dashboard-container nav{
   padding:0 1rem;
 }
+
+body{
+  display:none !important;
+}
