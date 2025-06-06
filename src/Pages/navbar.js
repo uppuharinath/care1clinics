@@ -32,7 +32,7 @@ const Navbar = () => {
         className="flex jcc aic items-center font-mont"
       >
         
-        <a>{item.name}</a>
+<a href={item.link}>{item.name}</a>
       </button>
     ) : (
       <a
