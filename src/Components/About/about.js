@@ -5,9 +5,9 @@ const about = () => {
     <div className='container'>
       <div className="row bg-gray about">
         <div>
-          <h1>About Care1 Clinics & Dr. Vajrala Naveed Ali</h1>
+          {/* <h1>About Care1 Clinics & Dr. Vajrala Naveed Ali</h1> */}
             <p>
-           <strong>Dr. Vajrala Naveed Ali</strong> 
+           {/* <strong>Dr. Vajrala Naveed Ali</strong>  */}
            is a highly respected General Practitioner based in Varadaiahpalem, serving patients from Tada, Tirupati, and surrounding regions. With over 12 years of clinical experience, including international exposure, Dr. Ali is well-known for his expertise in primary healthcare and his commitment to patient well-being.
 
 <div>He is the founder and proprietor of Care1 Clinics, a newly established, modern healthcare facility designed to deliver affordable, high-quality medical services to nearby communities.

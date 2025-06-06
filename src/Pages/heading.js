@@ -15,12 +15,12 @@ const Heading = () => {
             <div className="row">
               <div className="col-12 flex jcc aic text-center">
                 <h1 className="listings doctorname text-center ">
-                  Multi speciality Doctor <span>Naveed Ali</span> Now in Varadaiahpalem
+                  {/* Multi speciality Doctor <span>Naveed Ali</span> Now in Varadaiahpalem */}
                 </h1>
               </div>
               <div className="doctorpic col-12 flex flex-column text-ld jcc aic">
-                  <img src={pic} alt="Doctor"   />
-                  <h3 className='text-blue bg-white text-center'>Dr. Ali [ MBBS ] <span className='red'>Reg No. 80105</span>  </h3>
+                  {/* <img src={pic} alt="Doctor"   /> */}
+                  {/* <h3 className='text-blue bg-white text-center'>Dr. Ali [ MBBS ] <span className='red'>Reg No. 80105</span>  </h3> */}
               </div>
 
               <div className="col-12">
