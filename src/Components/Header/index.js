@@ -35,7 +35,7 @@ const Header = ({ searchInput, setSearchInput }) => {
       <div className="container header">
         <div className="text-center branding flex  gray jcsa jcc aic">
           <div className="logo-nav cursor" onClick={() => navigate("/")}>
-              <img src={logo} className="logo-nav-img" alt="Logo" />
+              {/* <img src={logo} className="logo-nav-img" alt="Logo" /> */}
           </div>
           
           <div>
@@ -45,7 +45,7 @@ const Header = ({ searchInput, setSearchInput }) => {
               
               <Plus/>
               
-            <span className="clinicname">
+            {/* <span className="clinicname">
 
               <span>C</span>
               <span>a</span>
@@ -59,17 +59,17 @@ const Header = ({ searchInput, setSearchInput }) => {
               <span>i</span>
               <span>c</span>
               <span>s</span>
-            </span>
+            </span> */}
 
 
             </strong> 
           </div>
           
-          <div > <span className=" text-black"> <strong>Contact :</strong> 9490049955</span> </div>
+          {/* <div > <span className=" text-black"> <strong>Contact :</strong> 9490049955</span> </div> */}
          
         </div>
          <div>
-            <LoginHome />
+            {/* <LoginHome /> */}
           </div>
       </div>
 
@@ -77,7 +77,7 @@ const Header = ({ searchInput, setSearchInput }) => {
       <div className="container">
         <div className="row flex jcc box-shadow1">
           <div className="col-12 ">
-            <Navbar />
+            {/* <Navbar /> */}
           </div>
         </div>
       </div>
@@ -100,7 +100,7 @@ const Header = ({ searchInput, setSearchInput }) => {
                   </button>
           </div>
           </div>
-          <div className="col-6"><Navsidebar /></div>
+          {/* <div className="col-6"><Navsidebar /></div> */}
         </div>
       </div>
       
