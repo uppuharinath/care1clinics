@@ -1,4 +1,4 @@
-import pic from '../assets/pic.jpeg';
+// import pic from '../assets/pic.jpeg';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/auth';
 import Plus from '../Components/Plus/plus';
